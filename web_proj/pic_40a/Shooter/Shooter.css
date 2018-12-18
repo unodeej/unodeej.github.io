@@ -1,0 +1,11 @@
+#spaceship {
+	position: fixed;
+	left: 10px;
+	top: 600px;
+}
+
+#bullet {
+	position: fixed;
+	left: 10px;
+	top: 600px;
+}

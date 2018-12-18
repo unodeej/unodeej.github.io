@@ -1,0 +1,111 @@
+html {
+	color: white;
+	font-family: TW Cen MT, sans-serif;
+}
+
+h1 {
+	font-size: 2.5em;
+	color: rgb(61, 255, 87);
+	text-align: center;
+	clear: left;
+}
+
+h2 {
+	color: white;
+	font-size: 1.8em;
+}
+
+h3 {
+	font-style: italic;
+}
+
+p {
+	text-indent: 20px;
+	color: white;
+}
+
+a {
+	color: rgb(61, 255, 87);
+}
+a:visited {
+	color: rgb(186, 255, 195);
+}
+
+em, b, strong {
+	color: rgb(61, 255, 87);
+}
+
+hr {
+	border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
+}
+
+.noindent {
+	text-indent: 0px;
+}
+
+body {
+	background: url(https://opengameart.org/sites/default/files/preview_5.gif);
+	background-repeat: repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: 768px;
+	opacity: 1;
+	width: 65%;
+	margin-left:7%;
+}
+
+table, th, td {
+	border: 1px solid;
+}
+
+#Table {
+	float: left;
+	padding: 50px;
+}
+
+#Gallery {
+	float: right;
+	display: inline;
+	position: relative;
+	margin-left: 30px;
+	margin-right: 60px;
+}
+
+#Gallery img {
+	width: 300px;
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	display: table;
+	position: absolute;
+}
+
+#Gallery #img1 {
+	z-index: 3;
+	position: relative;
+	margin-bottom:200px;
+	margin-right:100px;
+}
+#Gallery #img2 {
+	top: 50px;
+	left: 50px; 
+	z-index: 2;
+}
+#Gallery #img3 {
+	z-index: 1;
+	top: 100px;
+	left: 100px; 
+}
+
+#Gallery #img1:hover, #Gallery #img2:hover, #Gallery #img3:hover {
+	z-index:4;
+	border-style: solid;
+	border-color: rgb(61, 255, 87);
+	border-width: 1px;
+}
+
+form {
+	width:50%;
+}

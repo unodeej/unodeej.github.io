@@ -1,0 +1,26 @@
+/* The gray background region */
+#Gray {
+	background-color: gray;
+	height:300px;
+}
+
+/* The moving, animated box. */
+#Box {
+	background-color: red;
+	text-align: center;
+	position: relative;
+	top: 75px;
+	left: 0px;
+	width: 280px;
+	height: 120px;
+}
+
+/* This region activated if no greeting is to be displayed */
+#noGreeting {
+	display: block;
+}
+
+/* This region activated if an important person visits the site */
+#importantPeopleOnly {
+	display:none;
+}
