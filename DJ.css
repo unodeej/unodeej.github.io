@@ -1,3 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Thasadith);
+
+html {
+	font-family: 'Thasadith', sans-serif;
+}
+
 #header {
 	text-align: center;
+}
+
+#web_projects {
+	position: absolute;
+	float: left;
+	left: 20%;
 }
