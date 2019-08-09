@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Best Keep Talking Solver</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="rect1"></div>
+  <div id="rect2"></div>
+  <div id="rect3"></div>
+  <div id="Wires">
+    <h1>Wires</h1>
+    <form name="wires" method="post">
+      <p>Which wires do you see?</p>
+      <div class = "section">
+            1: <input type="radio" name="wire_1" value="" id="none_1" class = "radio" checked>
+                <label class="button none" for="none_1">none</label>
+               <input type="radio" name="wire_1" value="black" id="black_1" class = "radio">
+                <label class="button black" for="black_1"></label>
+               <input type="radio" name="wire_1" value="blue" id="blue_1" class = "radio">
+                <label class="button blue" for="blue_1"></label>
+               <input type="radio" name="wire_1" value="red" id="red_1" class = "radio">
+                <label class="button red" for="red_1"></label>
+               <input type="radio" name="wire_1" value="white" id="white_1" class = "radio">
+                <label class="button white" for="white_1"></label>
+               <input type="radio" name="wire_1" value="yellow" id="yellow_1" class = "radio">
+                <label class="button yellow" for="yellow_1"></label>
+            <label class="rectangle wire1" for="wire_1"></label>
+            <br/>
+      </div>
+      <div class = "section">
+            2: <input type="radio" name="wire_2" value="" id="none_2" class = "radio" checked>
+                <label class="button none" for="none_2">none</label>
+               <input type="radio" name="wire_2" value="black" id="black_2" class = "radio">
+                <label class="button black" for="black_2"></label>
+               <input type="radio" name="wire_2" value="blue" id="blue_2" class = "radio">
+                <label class="button blue" for="blue_2"></label>
+               <input type="radio" name="wire_2" value="red" id="red_2" class = "radio">
+                <label class="button red" for="red_2"></label>
+               <input type="radio" name="wire_2" value="white" id="white_2" class = "radio">
+                <label class="button white" for="white_2"></label>
+               <input type="radio" name="wire_2" value="yellow" id="yellow_2" class = "radio">
+                <label class="button yellow" for="yellow_2"></label>
+            <label class="rectangle wire2" for="wire_2"></label>
+            <br/>
+      </div>
+      <div class = "section">
+            3: <input type="radio" name="wire_3" value="" id="none_3" class = "radio" checked>
+                <label class="button none" for="none_3">none</label>
+               <input type="radio" name="wire_3" value="black" id="black_3" class = "radio">
+                <label class="button black" for="black_3"></label>
+               <input type="radio" name="wire_3" value="blue" id="blue_3" class = "radio">
+                <label class="button blue" for="blue_3"></label>
+               <input type="radio" name="wire_3" value="red" id="red_3" class = "radio">
+                <label class="button red" for="red_3"></label>
+               <input type="radio" name="wire_3" value="white" id="white_3" class = "radio">
+                <label class="button white" for="white_3"></label>
+               <input type="radio" name="wire_3" value="yellow" id="yellow_3" class = "radio">
+                <label class="button yellow" for="yellow_3"></label>
+            <label class="rectangle wire3" for="wire_3"></label>
+            <br/>
+      </div>
+      <div class = "section">
+            4: <input type="radio" name="wire_4" value="" id="none_4" class = "radio" checked>
+                <label class="button none" for="none_4">none</label>
+               <input type="radio" name="wire_4" value="black" id="black_4" class = "radio">
+                <label class="button black" for="black_4"></label>
+               <input type="radio" name="wire_4" value="blue" id="blue_4" class = "radio">
+                <label class="button blue" for="blue_4"></label>
+               <input type="radio" name="wire_4" value="red" id="red_4" class = "radio">
+                <label class="button red" for="red_4"></label>
+               <input type="radio" name="wire_4" value="white" id="white_4" class = "radio">
+                <label class="button white" for="white_4"></label>
+               <input type="radio" name="wire_4" value="yellow" id="yellow_4" class = "radio">
+                <label class="button yellow" for="yellow_4"></label>
+            <label class="rectangle wire4" for="wire_4"></label>
+            <br/>
+      </div>
+      <div class = "section">
+            5: <input type="radio" name="wire_5" value="" id="none_5" class = "radio" checked>
+                <label class="button none" for="none_5">none</label>
+               <input type="radio" name="wire_5" value="black" id="black_5" class = "radio">
+                <label class="button black" for="black_5"></label>
+               <input type="radio" name="wire_5" value="blue" id="blue_5" class = "radio">
+                <label class="button blue" for="blue_5"></label>
+               <input type="radio" name="wire_5" value="red" id="red_5" class = "radio">
+                <label class="button red" for="red_5"></label>
+               <input type="radio" name="wire_5" value="white" id="white_5" class = "radio">
+                <label class="button white" for="white_5"></label>
+               <input type="radio" name="wire_5" value="yellow" id="yellow_5" class = "radio">
+                <label class="button yellow" for="yellow_5"></label>
+            <label class="rectangle wire5" for="wire_5"></label>
+            <br/>
+      </div>
+      <div class = "section">
+            6: <input type="radio" name="wire_6" value="" id="none_6" class = "radio" checked>
+                <label class="button none" for="none_6">none</label>
+               <input type="radio" name="wire_6" value="black" id="black_6" class = "radio">
+                <label class="button black" for="black_6"></label>
+               <input type="radio" name="wire_6" value="blue" id="blue_6" class = "radio">
+                <label class="button blue" for="blue_6"></label>
+               <input type="radio" name="wire_6" value="red" id="red_6" class = "radio">
+                <label class="button red" for="red_6"></label>
+               <input type="radio" name="wire_6" value="white" id="white_6" class = "radio">
+                <label class="button white" for="white_6"></label>
+               <input type="radio" name="wire_6" value="yellow" id="yellow_6" class = "radio">
+                <label class="button yellow" for="yellow_6"></label>
+            <label class="rectangle wire6" for="wire_6"></label>
+            <br/>
+      </div>
+      
+      <br>
+      <p id = "serial">
+        Last digit of serial number: <input type="text" name="serial" id = "serial_num"><br>
+      </p>
+      <button type="button" onclick="SolveWires()">Solve!</button>
+    </form>
+    <p id="result">
+    </p>
+
+    <script>
+      function SolveWires() {
+        let result_text;
+        let wire_colors = [];
+        let radios = [];
+        
+        for (let i=0; i <= 5; i++)
+        {
+          wire_colors[i] = "";
+          radios[i] = document.getElementsByName("wire_" + (i + 1).toString());
+          for (let j=0, len = radios[i].length; j < len; j++)
+          {
+            if (radios[i][j].checked)
+            {
+              wire_colors[i] = radios[i][j].value;
+              break;
+            }
+            
+          }
+        }
+
+        document.getElementById("serial").style.visibility = "hidden";
+
+        if (wire_colors[0] === "" || 
+            wire_colors[1] === "" || 
+            wire_colors[2] === "" ) {
+          result_text = "not enough wires selected"
+        }
+
+        // Three-wire condition
+        else if (wire_colors[3] === "" &&
+                 wire_colors[4] === "" &&
+                 wire_colors[5] === "") {
+
+          result_text = "idk";
+          let is_red_present = false;
+          let is_last_white = false;
+          let blue_wire_count = 0;
+          let current_wire = 1;
+
+          for (c of wire_colors) {
+            if (c === "red") 
+              is_red_present = true;
+            else if (c === "blue")
+              blue_wire_count++;
+            else if (c === "white" && current_wire === 3)
+              is_last_white = true;
+
+            current_wire++;
+          }
+
+          if (is_red_present === false)
+            result_text = "Cut the second wire!";
+          else if (is_last_white === true)
+            result_text = "Cut the third wire! It's white!";
+          else if (blue_wire_count > 1) {
+            if (wire_colors[2] === "blue")
+              result_text = "Cut the third wire! It's blue!";
+            else if (wire_colors[1] === "blue")
+              result_text = "Cut the second wire! It's blue!"
+          }
+          else {
+            result_text = "Cut the third wire!";
+          }
+        }
+
+        // Four-wire condition
+        else if (wire_colors[3] !== "" &&
+                 wire_colors[4] === "" &&
+                 wire_colors[5] === "") {
+          result_text = "idk";
+          let red_wire_count = 0;
+          let is_last_yellow = false;
+          let blue_wire_count = 0;
+          let yellow_wire_count = 0;
+          let last_serial_digit_is_odd = false;
+
+          let current_wire = 1;
+
+          for (c of wire_colors) {
+            if (c === "red") 
+              red_wire_count++;
+            else if (c === "blue")
+              blue_wire_count++;
+            else if (c === "yellow" && current_wire === 4) {
+              is_last_yellow = true;
+              yellow_wire_count++;
+            }
+            else if (c === "yellow")
+              yellow_wire_count++;
+
+            current_wire++;
+          }
+
+          if (red_wire_count > 1) {
+            document.getElementById("serial").style.visibility = "visible";
+            let last_serial_digit = document.getElementById("serial_num").value;
+            if (last_serial_digit === "1" ||
+                last_serial_digit === "3" ||
+                last_serial_digit === "5" ||
+                last_serial_digit === "7" ||
+                last_serial_digit === "9")
+                {
+                  last_serial_digit_is_odd = true;
+                }
+            else if (last_serial_digit === "2" ||
+                last_serial_digit === "4" ||
+                last_serial_digit === "6" ||
+                last_serial_digit === "8" ||
+                last_serial_digit === "0")
+                  last_serial_digit_is_odd = false;
+            else
+            {
+              result_text = "Please input a valid last digit of the serial number!";
+              document.getElementById("result").innerHTML = result_text;
+              return;
+            }
+          }
+
+          if (red_wire_count > 1 && last_serial_digit_is_odd === true)
+          {
+            if (wire_colors[3] === "red")
+              result_text = "Cut the fourth wire! It's red!";
+            else if (wire_colors[2] === "red")
+              result_text = "Cut the third wire! It's red!";
+            else if (wire_colors[1] === "red")
+              result_text = "Cut the second wire! It's red!";
+          }
+          else if (is_last_yellow === true && red_wire_count === 0)
+            result_text = "Cut the first wire!";
+          else if (blue_wire_count === 1)
+            result_text = "Cut the first wire!";
+          else if (yellow_wire_count > 1)
+            result_text = "Cut the fourth wire!";
+          else {
+            result_text = "Cut the second wire!";
+          }
+        }
+        // Five-wire condition
+        else if (wire_colors[3] !== "" &&
+                 wire_colors[4] !== "" &&
+                 wire_colors[5] === "") {
+          result_text = "idk";
+          let is_last_black = false;
+          let last_serial_digit_is_odd = false;
+          let red_wire_count = 0;
+          let yellow_wire_count = 0;
+          let black_wire_count = 0;
+
+          let current_wire = 1;
+
+          for (c of wire_colors) {
+            if (c === "red") 
+              red_wire_count++;
+            else if (c === "yellow")
+              yellow_wire_count++;
+            else if (c === "black" && current_wire === 5) {
+              is_last_black = true;
+              black_wire_count++;
+            }
+            else if (c === "black")
+              black_wire_count++;
+
+            current_wire++;
+          }
+
+          if (is_last_black === true) {
+            document.getElementById("serial").style.visibility = "visible";
+            let last_serial_digit = document.getElementById("serial_num").value;
+            if (last_serial_digit === "1" ||
+                last_serial_digit === "3" ||
+                last_serial_digit === "5" ||
+                last_serial_digit === "7" ||
+                last_serial_digit === "9")
+                {
+                  last_serial_digit_is_odd = true;
+                }
+            else if (last_serial_digit === "2" ||
+                last_serial_digit === "4" ||
+                last_serial_digit === "6" ||
+                last_serial_digit === "8" ||
+                last_serial_digit === "0")
+                  last_serial_digit_is_odd = false;
+            else
+            {
+              result_text = "Please input a valid last digit of the serial number!";
+              document.getElementById("result").innerHTML = result_text;
+              return;
+            }
+          }
+
+          if (is_last_black === true && last_serial_digit_is_odd === true)
+              result_text = "Cut the fourth wire!";
+          else if (red_wire_count === 1 && yellow_wire_count > 1)
+            result_text = "Cut the first wire!";
+          else if (black_wire_count === 0)
+            result_text = "Cut the second wire!";
+          else {
+            result_text = "Cut the first wire!";
+          }
+        }
+        // Six-wire condition
+        else if (wire_colors[3] !== "" &&
+                 wire_colors[4] !== "" &&
+                 wire_colors[5] !== "") {
+          result_text = "idk";
+          let last_serial_digit_is_odd = false;
+          let yellow_wire_count = 0;
+          let white_wire_count = 0;
+          let red_wire_count = 0;
+
+          let current_wire = 1;
+
+          for (c of wire_colors) {
+            if (c === "red") 
+              red_wire_count++;
+            else if (c === "yellow")
+              yellow_wire_count++;
+            else if (c === "white")
+              white_wire_count++;
+
+            current_wire++;
+          }
+
+          if (yellow_wire_count === 0) {
+            document.getElementById("serial").style.visibility = "visible";
+            let last_serial_digit = document.getElementById("serial_num").value;
+            if (last_serial_digit === "1" ||
+                last_serial_digit === "3" ||
+                last_serial_digit === "5" ||
+                last_serial_digit === "7" ||
+                last_serial_digit === "9")
+                {
+                  last_serial_digit_is_odd = true;
+                }
+            else if (last_serial_digit === "2" ||
+                last_serial_digit === "4" ||
+                last_serial_digit === "6" ||
+                last_serial_digit === "8" ||
+                last_serial_digit === "0")
+                  last_serial_digit_is_odd = false;
+            else
+            {
+              result_text = "Please input a valid last digit of the serial number!";
+              document.getElementById("result").innerHTML = result_text;
+              return;
+            }
+          }
+
+          if (yellow_wire_count === 0 && last_serial_digit_is_odd === true)
+              result_text = "Cut the third wire!";
+          else if (yellow_wire_count === 1 && white_wire_count > 1)
+            result_text = "Cut the fourth wire!";
+          else if (red_wire_count === 0)
+            result_text = "Cut the sixth wire!";
+          else {
+            result_text = "Cut the fourth wire!";
+          }
+        }
+        else {
+          result_text = "invalid wire input";
+        }
+
+        document.getElementById("result").innerHTML = result_text;
+      }
+    </script>
+  </div>
+</body>
