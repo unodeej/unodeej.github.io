@@ -1,0 +1,330 @@
+#serial {
+  visibility:hidden;
+}
+#Wires {
+
+}
+#result {
+
+}
+
+#rect1 {
+  width: 40px;
+  height: 460px;
+  margin-left: 400px;
+  margin-top: 80px;
+  border: 1px solid black;
+  position: absolute;
+  background-color: clear;
+}
+
+#rect2 {
+  width: 40px;
+  height: 460px;
+  margin-left: 700px;
+  margin-top: 80px;
+  border: 1px solid black;
+  position: absolute;
+  background-color: clear;
+}
+
+#rect3 {
+  width: 370px;
+  height: 480px;
+  margin-left: 385px;
+  margin-top: 70px;
+  border: 3px solid black;
+  position: absolute;
+  background-color: clear;
+}
+
+.rectangle {
+  width: 300px;
+  height: 10px;
+  margin-left: 400px;
+  margin-top: -15px;
+  float: left;
+  background-color: clear;
+}
+
+.section {
+  margin: 20px;
+  margin-top: 50px;
+}
+
+.button:hover {
+  border: 1px solid yellow;
+}
+
+.button {
+  border: 1px solid black;
+  margin: 0px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.button.none {
+  background-image: url(https://www.sclance.com/pngs/x-sign-png/x_sign_png_1543061.jpg);
+  background-size: cover;
+  font-size:x-small;
+}
+
+.button.black {
+  background-color: black;
+}
+.button.blue {
+  background-color: blue;
+}
+.button.red {
+  background-color: red;
+}
+.button.white {
+  background-color: whitesmoke;
+}
+.button.yellow {
+  background-color: yellow;
+}
+
+.radio {
+  visibility: hidden;
+}
+
+#black_1:checked ~ label.rectangle.wire1 {
+  background-color: black;
+  border: 1px solid black;
+}
+#blue_1:checked ~ label.rectangle.wire1 {
+  background-color: blue;
+  border: 1px solid black;
+}
+#red_1:checked ~ label.rectangle.wire1 {
+  background-color: red;
+  border: 1px solid black;
+}
+#white_1:checked ~ label.rectangle.wire1 {
+  background-color: white;
+  border: 1px solid black;
+}
+#yellow_1:checked ~ label.rectangle.wire1 {
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+#black_2:checked ~ label.rectangle.wire2 {
+  background-color: black;
+  border: 1px solid black;
+}
+#blue_2:checked ~ label.rectangle.wire2 {
+  background-color: blue;
+  border: 1px solid black;
+}
+#red_2:checked ~ label.rectangle.wire2 {
+  background-color: red;
+  border: 1px solid black;
+}
+#white_2:checked ~ label.rectangle.wire2 {
+  background-color: white;
+  border: 1px solid black;
+}
+#yellow_2:checked ~ label.rectangle.wire2 {
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+#black_3:checked ~ label.rectangle.wire3 {
+  background-color: black;
+  border: 1px solid black;
+}
+#blue_3:checked ~ label.rectangle.wire3 {
+  background-color: blue;
+  border: 1px solid black;
+}
+#red_3:checked ~ label.rectangle.wire3 {
+  background-color: red;
+  border: 1px solid black;
+}
+#white_3:checked ~ label.rectangle.wire3 {
+  background-color: white;
+  border: 1px solid black;
+}
+#yellow_3:checked ~ label.rectangle.wire3 {
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+#black_4:checked ~ label.rectangle.wire4 {
+  background-color: black;
+  border: 1px solid black;
+}
+#blue_4:checked ~ label.rectangle.wire4 {
+  background-color: blue;
+  border: 1px solid black;
+}
+#red_4:checked ~ label.rectangle.wire4 {
+  background-color: red;
+  border: 1px solid black;
+}
+#white_4:checked ~ label.rectangle.wire4 {
+  background-color: white;
+  border: 1px solid black;
+}
+#yellow_4:checked ~ label.rectangle.wire4 {
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+#black_5:checked ~ label.rectangle.wire5 {
+  background-color: black;
+  border: 1px solid black;
+}
+#blue_5:checked ~ label.rectangle.wire5 {
+  background-color: blue;
+  border: 1px solid black;
+}
+#red_5:checked ~ label.rectangle.wire5 {
+  background-color: red;
+  border: 1px solid black;
+}
+#white_5:checked ~ label.rectangle.wire5 {
+  background-color: white;
+  border: 1px solid black;
+}
+#yellow_5:checked ~ label.rectangle.wire5 {
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+#black_6:checked ~ label.rectangle.wire6 {
+  background-color: black;
+  border: 1px solid black;
+}
+#blue_6:checked ~ label.rectangle.wire6 {
+  background-color: blue;
+  border: 1px solid black;
+}
+#red_6:checked ~ label.rectangle.wire6 {
+  background-color: red;
+  border: 1px solid black;
+}
+#white_6:checked ~ label.rectangle.wire6 {
+  background-color: white;
+  border: 1px solid black;
+}
+#yellow_6:checked ~ label.rectangle.wire6 {
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+#none_1:checked ~ label.button.none {
+  border: 2px solid lime;
+}
+#black_1:checked ~ label.button.black {
+  border: 2px solid lime;
+}
+#blue_1:checked ~ label.button.blue {
+  border: 2px solid lime;
+}
+#red_1:checked ~ label.button.red {
+  border: 2px solid lime;
+}
+#white_1:checked ~ label.button.white {
+  border: 2px solid lime;
+}
+#yellow_1:checked ~ label.button.yellow {
+  border: 2px solid lime;
+}
+
+#none_2:checked ~ label.button.none {
+  border: 2px solid lime;
+}
+#black_2:checked ~ label.button.black {
+  border: 2px solid lime;
+}
+#blue_2:checked ~ label.button.blue {
+  border: 2px solid lime;
+}
+#red_2:checked ~ label.button.red {
+  border: 2px solid lime;
+}
+#white_2:checked ~ label.button.white {
+  border: 2px solid lime;
+}
+#yellow_2:checked ~ label.button.yellow {
+  border: 2px solid lime;
+}
+
+#none_3:checked ~ label.button.none {
+  border: 2px solid lime;
+}
+#black_3:checked ~ label.button.black {
+  border: 2px solid lime;
+}
+#blue_3:checked ~ label.button.blue {
+  border: 2px solid lime;
+}
+#red_3:checked ~ label.button.red {
+  border: 2px solid lime;
+}
+#white_3:checked ~ label.button.white {
+  border: 2px solid lime;
+}
+#yellow_3:checked ~ label.button.yellow {
+  border: 2px solid lime;
+}
+
+#none_4:checked ~ label.button.none {
+  border: 2px solid lime;
+}
+#black_4:checked ~ label.button.black {
+  border: 2px solid lime;
+}
+#blue_4:checked ~ label.button.blue {
+  border: 2px solid lime;
+}
+#red_4:checked ~ label.button.red {
+  border: 2px solid lime;
+}
+#white_4:checked ~ label.button.white {
+  border: 2px solid lime;
+}
+#yellow_4:checked ~ label.button.yellow {
+  border: 2px solid lime;
+}
+
+#none_5:checked ~ label.button.none {
+  border: 2px solid lime;
+}
+#black_5:checked ~ label.button.black {
+  border: 2px solid lime;
+}
+#blue_5:checked ~ label.button.blue {
+  border: 2px solid lime;
+}
+#red_5:checked ~ label.button.red {
+  border: 2px solid lime;
+}
+#white_5:checked ~ label.button.white {
+  border: 2px solid lime;
+}
+#yellow_5:checked ~ label.button.yellow {
+  border: 2px solid lime;
+}
+
+#none_6:checked ~ label.button.none {
+  border: 2px solid lime;
+}
+#black_6:checked ~ label.button.black {
+  border: 2px solid lime;
+}
+#blue_6:checked ~ label.button.blue {
+  border: 2px solid lime;
+}
+#red_6:checked ~ label.button.red {
+  border: 2px solid lime;
+}
+#white_6:checked ~ label.button.white {
+  border: 2px solid lime;
+}
+#yellow_6:checked ~ label.button.yellow {
+  border: 2px solid lime;
+}
