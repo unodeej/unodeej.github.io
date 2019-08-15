@@ -124,7 +124,7 @@ function Init()
 		let xCoord = Math.random()*1000;
 		let yCoord = Math.random()*1000;
 		appendString += "class=\"interactable\" width=\"100px\" id=\"card" + i+"\" style=\"left:" + xCoord + "px; top:" + yCoord + "px; position: fixed;\">";
-		playingCards[[i].left = xCoord;
+		playingCards[i].left = xCoord;
 		playingCards[i].top = yCoord;
 		$("#playingCards").append(appendString);
 	}
@@ -170,7 +170,7 @@ document.addEventListener("keypress",
 			}
 		}
 		
-		if (event.key === "f" || event.key === "F")
+		if (event.key === "f" || event.key === "F") // for testing
 		{
 			if (selectedCard !== null)
 			{
@@ -258,6 +258,8 @@ function ShuffleCards() {
 		$("#" + playingCards[i].id).css("zIndex", Math.floor(Math.random()*topZIndex));
 		// Mark cards as being in the deck.
 		playingCards[i].playLocation = "deck";
+		
+		PushToDatabase(playingCards[i]);
 	}
 	
 }
@@ -272,6 +274,7 @@ function FlipCard(card) {
 		$("#" + card.id).attr("src", card.suit + "s_" + card.code + ".png");
 		card.isFaceUp = true;
 	}
+	PushToDatabase(card);
 }
 
 
