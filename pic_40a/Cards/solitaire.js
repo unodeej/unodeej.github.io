@@ -168,7 +168,7 @@ document.addEventListener("keypress",
 		{
 			if (selectedCard !== null)
 			{
-				PushToDatabase(7, 7, 'hearts', true, 'deck');
+				PushToDatabase(selectedCard.id, selectedCard.value, selectedCard.suit, selectedCard.isFaceUp, selectedCard.playLocation);
 			}
 		}
 	}
