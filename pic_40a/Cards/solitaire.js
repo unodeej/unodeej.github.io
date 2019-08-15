@@ -170,7 +170,7 @@ document.addEventListener("keypress",
 				
 				jQuery.ajax({
 					type: "POST",
-					url: 'insertCard.php',
+					url: 'index.html',
 					dataType: 'json',
 					data: {functionname: 'insertCard', arguments:[1, 'heart', 1, 1, 1]},
 					
@@ -258,7 +258,7 @@ function FlipCard(card) {
 		card.isFaceUp = false;
 	}
 	else {
-		$("#" + card.id).attr("src", card.suit + "s_" + card.code);
+		$("#" + card.id).attr("src", card.suit + "s_" + card.code + ".png");
 		card.isFaceUp = true;
 	}
 }
