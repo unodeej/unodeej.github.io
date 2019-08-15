@@ -216,7 +216,7 @@ $(this).mousemove(function (event) {
 });
 
 function PushToDatabase(id, value, suit, isFaceUp, playLocation) {
-	db.collection('cards').add({
+	db.collection('cards').doc(id).set({
 		id: id,
 		value: value,					// 0-13 numerical value of card.
 		suit: suit,					// String with the suit of the card
