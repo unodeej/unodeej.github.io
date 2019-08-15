@@ -166,25 +166,20 @@ document.addEventListener("keypress",
 		{
 			if (selectedCard !== null)
 			{
-				let myVar;
-				
-				jQuery.ajax({
-					type: "POST",
-					url: 'index.html',
-					dataType: 'json',
-					data: {functionname: 'insertCard', arguments:[1, 'heart', 1, 1, 1]},
+				db.collection('cards').add({
+					id: 1;
+					value: 3;					// 0-13 numerical value of card.
+					suit: 'spades';					// String with the suit of the card
+					isFaceUp: false;
+					playLocation: 'field';
 					
-					success: function (obj, textstatus) {
-						if ( !('error' in obj) ) {
-							myVar = obj.result;
-						}
-						else {
-							console.log (obj.error);
-						}
-					}
+				})
+				.then(function(docRef) {
+					console.log("Document written with ID: ", docRef.id);
+				})
+				.catch(function(error) {
+					console.error("Error adding document: ", error);
 				});
-				
-				console.log(myVar);
 			}
 		}
 	}
