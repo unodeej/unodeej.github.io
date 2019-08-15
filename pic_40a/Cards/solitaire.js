@@ -31,6 +31,9 @@ function Card(id, value, suit, playLocation) {
 	this.isFaceUp = true;				// Whether this card is facing with number side visible.
 	this.playLocation = playLocation;	// E.g., "deck", "discard", "field", etc.
 	
+	this.left = 0;					//x-coord
+	this.top = 0;						//y-coord				
+	
 	let cardCode = "";			// A, 1-10, J, Q, K code of card
 	switch(value)				// Assign card code.
 	{
@@ -118,8 +121,11 @@ function Init()
 			// Default card image.
 			appendString = "<img src=\"https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/poker-playing-card-3-heart-miroslav-nemecek.jpg\"";
 		}
-		appendString += "class=\"interactable\" width=\"100px\" id=\"card" + i+"\" style=\"left:" + Math.random()*1000 + "px; top:" + Math.random()*1000 + "px; position: fixed;\">";
-		
+		let xCoord = Math.random()*1000;
+		let yCoord = Math.random()*1000;
+		appendString += "class=\"interactable\" width=\"100px\" id=\"card" + i+"\" style=\"left:" + xCoord + "px; top:" + yCoord + "px; position: fixed;\">";
+		playingCards[[i].left = xCoord;
+		playingCards[i].top = yCoord;
 		$("#playingCards").append(appendString);
 	}
 }
@@ -168,7 +174,7 @@ document.addEventListener("keypress",
 		{
 			if (selectedCard !== null)
 			{
-				PushToDatabase(selectedCard.id, selectedCard.value, selectedCard.suit, selectedCard.isFaceUp, selectedCard.playLocation);
+				PushToDatabase(selectedCard);
 			}
 		}
 	}
@@ -212,23 +218,27 @@ $(this).mousemove(function (event) {
 		$("#" + selectedCard.id).css("position", "fixed");
 		$("#" + selectedCard.id).css("left", event.clientX - OffsetX + "px");
 		$("#" + selectedCard.id).css("top", event.clientY - OffsetY + "px");
+		selectedCard.left = event.clientX - OffsetX;
+		selectedCard.top = event.clientY - OffsetY;
 	}
 });
 
-function PushToDatabase(id, value, suit, isFaceUp, playLocation) {
+function PushToDatabase(card) {
 	db.collection('cards').doc(id).set({
-		id: id,
-		value: value,					// 0-13 numerical value of card.
-		suit: suit,					// String with the suit of the card
-		isFaceUp: isFaceUp,
-		playLocation: playLocation
+		id: card.id,
+		value: card.value,					// 0-13 numerical value of card.
+		suit: card.suit,					// String with the suit of the card
+		isFaceUp: card.isFaceUp,
+		playLocation: card.playLocation,
+		left: card.left;
+		top: card.top;
 		
 	})
-	.then(function(docRef) {
-		console.log("Document written with ID: ", docRef.id);
+	.then(function() {
+    console.log("Document successfully written!");
 	})
 	.catch(function(error) {
-		console.error("Error adding document: ", error);
+		console.error("Error writing document: ", error);
 	});
 }
 
