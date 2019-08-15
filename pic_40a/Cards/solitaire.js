@@ -97,19 +97,19 @@ function Init()
 		let appendString;
 		if (playingCards[i].suit === "heart")
 		{
-			appendString = "<img src=\"hearts_" + playingCards[i].code + "\"";
+			appendString = "<img src=\"hearts_" + playingCards[i].code + ".png\"";
 		}
 		else if (playingCards[i].suit === "diamond")
 		{
-			appendString = "<img src=\"diamonds_" + playingCards[i].code + "\"";
+			appendString = "<img src=\"diamonds_" + playingCards[i].code + ".png\"";
 		}
 		else if (playingCards[i].suit === "spade")
 		{
-			appendString = "<img src=\"spades_" + playingCards[i].code + "\"";
+			appendString = "<img src=\"spades_" + playingCards[i].code + ".png\"";
 		}
 		else if (playingCards[i].suit === "club")
 		{
-			appendString = "<img src=\"clubs_" + playingCards[i].code + "\"";
+			appendString = "<img src=\"clubs_" + playingCards[i].code + ".png\"";
 		}
 		else
 		{
