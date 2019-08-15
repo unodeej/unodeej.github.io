@@ -34,6 +34,7 @@
 			<p>
 				<form onsubmit="saveToFirebase()">
 					YOBRO<br>
+					<input type="text" id="user-email">
 					<input type="submit">
 				</form>
 			</p>
@@ -65,12 +66,14 @@
 
 			let db = firebase.firestore();
 			
-			function saveToFirebase(email) {
+			saveToFirebase();
+			
+			function saveToFirebase() {
 				var emailObject = {
-					email: email
+					email: document.getElementById()
 				};
 				db.collection('subscription-entries').add({
-					first: "hey",
+					first: emailObject,
 					last: "ho",
 					born: 1998
 				})
