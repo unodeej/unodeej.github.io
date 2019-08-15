@@ -64,18 +64,22 @@
 		  firebase.initializeApp(firebaseConfig);
 
 		  let db = firebase.firestore();
-
-			firebase.database().ref('subscription-entries').push({
-				first: "Ada",
-				last: "Lovelace",
-				born: 1815
-			})
-			.then(function(docRef) {
-				console.log("Document written with ID: ", docRef.id);
-			})
-			.catch(function(error) {
-				console.error("Error adding document: ", error);
-			});
+		</script>
+		
+		<script>
+			function saveToFirebase() {
+				firebase.database().ref('subscription-entries').push({
+					first: "Alyssa",
+					last: "Zhang",
+					born: 1998
+				})
+				.then(function(docRef) {
+					console.log("Document written with ID: ", docRef.id);
+				})
+				.catch(function(error) {
+					console.error("Error adding document: ", error);
+				});
+			}
 
 		</script>
 
