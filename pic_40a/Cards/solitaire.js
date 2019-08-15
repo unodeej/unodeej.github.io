@@ -157,6 +157,7 @@ $(".interactable").click(function() {
 	}
 	else
 	{
+		PushToDatabase(selectedCard);
 		selectedCard = null;
 	}
 });
@@ -230,8 +231,8 @@ function PushToDatabase(card) {
 		suit: card.suit,					// String with the suit of the card
 		isFaceUp: card.isFaceUp,
 		playLocation: card.playLocation,
-		left: card.left;
-		top: card.top;
+		left: card.left,
+		top: card.top
 		
 	})
 	.then(function() {
