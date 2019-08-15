@@ -13,33 +13,7 @@
 	<input type="button" value="Shuffle" onclick="ShuffleCards()">
 	
 	<?php
-		echo "HELOO";
-		// Try to create a new SQLite database.
-		try {
-		$mydb = new SQLite3('playingCards.db');
-		}
-		catch(Exception $ex) {
-			echo $ex->getMessage();
-		}
 		
-		
-		// Create a new table if it doesn't exist.
-		$statement = 'CREATE TABLE IF NOT EXISTS nerts(pileID INTEGER, suit TEXT, value INTEGER, posX REAL, posY REAL);';
-		$run = $mydb->query($statement);	
-		
-		
-		
-		
-		// Look through the table.
-		$statement = 'SELECT pileID, suit, value, posX, posY FROM nerts;';
-		$run = $mydb->query($statement);
-
-		if ($run) {
-			while($row = $run->fetchArray()) {
-				echo "D";
-				echo $row['pileID'];
-			}
-		}
 	?>
 	
 	<div id="playingCards">
