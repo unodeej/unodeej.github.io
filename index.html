@@ -70,12 +70,10 @@
 			
 			function saveToFirebase() {
 				let inputString = document.getElementById('user-email');
-				var emailObject = {
-					email: inputString
-				};
+				
 				db.collection('subscription-entries').add({
-					first: emailObject,
-					last: "ho",
+					first: "alyssa",
+					last: "z",
 					born: 1998
 				})
 				.then(function(docRef) {
