@@ -168,20 +168,7 @@ document.addEventListener("keypress",
 		{
 			if (selectedCard !== null)
 			{
-				db.collection('cards').add({
-					id: 1,
-					value: 3,					// 0-13 numerical value of card.
-					suit: 'spades',					// String with the suit of the card
-					isFaceUp: false,
-					playLocation: 'field'
-					
-				})
-				.then(function(docRef) {
-					console.log("Document written with ID: ", docRef.id);
-				})
-				.catch(function(error) {
-					console.error("Error adding document: ", error);
-				});
+				PushToDatabase(7, 7, 'hearts', true, 'deck');
 			}
 		}
 	}
@@ -227,6 +214,23 @@ $(this).mousemove(function (event) {
 		$("#" + selectedCard.id).css("top", event.clientY - OffsetY + "px");
 	}
 });
+
+function PushToDatabase(id, value, suit, isFaceUp, playLocation) {
+	db.collection('cards').add({
+		id: id,
+		value: value,					// 0-13 numerical value of card.
+		suit: suit,					// String with the suit of the card
+		isFaceUp: isFaceUp,
+		playLocation: playLocation
+		
+	})
+	.then(function(docRef) {
+		console.log("Document written with ID: ", docRef.id);
+	})
+	.catch(function(error) {
+		console.error("Error adding document: ", error);
+	});
+}
 
 function ShuffleCards() {
 	for (let i=0; i < totalCardCount; i++)
