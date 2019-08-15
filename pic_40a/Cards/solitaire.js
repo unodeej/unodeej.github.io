@@ -225,7 +225,7 @@ $(this).mousemove(function (event) {
 });
 
 function PushToDatabase(card) {
-	db.collection('cards').doc(id).set({
+	db.collection('cards').doc(card.id).set({
 		id: card.id,
 		value: card.value,					// 0-13 numerical value of card.
 		suit: card.suit,					// String with the suit of the card
