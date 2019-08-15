@@ -68,19 +68,18 @@
 		
 		<script>
 			function saveToFirebase() {
-				// Add a new document in collection "cities"
-				db.collection("cities").doc("LA").set({
-					name: "Los Angeles",
-					state: "CA",
-					country: "USA"
+				db.collection("users").add({
+					first: "Ada",
+					last: "Lovelace",
+					born: 1815
 				})
-				.then(function() {
-					console.log("Document successfully written!");
+				.then(function(docRef) {
+					console.log("Document written with ID: ", docRef.id);
 				})
 				.catch(function(error) {
-					console.error("Error writing document: ", error);
+					console.error("Error adding document: ", error);
 				});
-			}
+
 		</script>
 
 	</main>
