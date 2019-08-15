@@ -32,7 +32,7 @@
 				<a href="pic_40a/misc/">A bunch of random stuff</a>
 			</p>
 			<p>
-				<form onsubmit="saveToFirebase('test.email.wow')">
+				<form onsubmit="saveToFirebase()">
 					YOBRO<br>
 					<input type="submit">
 				</form>
@@ -65,7 +65,7 @@
 
 			let db = firebase.firestore();
 			
-			
+			saveToFirebase('test.email.wow');
 
 			function saveToFirebase(email) {
 				var emailObject = {
