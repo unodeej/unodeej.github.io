@@ -65,9 +65,9 @@
 
 			let db = firebase.firestore();
 
-			firebase.database().ref('subscription-entries').push({
-				first: "Alyssa",
-				last: "Zhang",
+			db.collection('subscription-entries').push({
+				first: "Bryan",
+				last: "Jiang",
 				born: 1998
 			})
 			.then(function(docRef) {
