@@ -32,7 +32,7 @@
 				<a href="pic_40a/misc/">A bunch of random stuff</a>
 			</p>
 			<p>
-				<form onsubmit="saveToFirebase('test@gmail')">
+				<form onsubmit="saveToFirebase()">
 					YOBRO<br>
 					<input type="submit">
 				</form>
@@ -64,9 +64,9 @@
 		</script>
 		
 		<script>
-			function saveToFirebase(email) {
+			function saveToFirebase() {
 				var emailObject = {
-					email: email
+					email: 'testtest'
 				};
 
 				firebase.database().ref('subscription-entries').push().set(emailObject)
