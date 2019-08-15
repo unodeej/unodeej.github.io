@@ -32,7 +32,8 @@
 				<a href="pic_40a/misc/">A bunch of random stuff</a>
 			</p>
 			<p>
-				<form onsubmit="saveToFirebase()">
+				<form onsubmit="saveToFirebase('test@gmail')">
+					YO<br>
 					<input type="submit">
 				</form>
 			</p>
@@ -49,7 +50,7 @@
 		<script src="/__/firebase/init.js"></script>
 		
 		<script>
-			function saveToFirebase(email="null@gmail.com") {
+			function saveToFirebase(email) {
 				var emailObject = {
 					email: email
 				};
