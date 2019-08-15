@@ -10,6 +10,8 @@ let OffsetY;				// Y mouse pos offset when selecting a card.
 
 
 
+
+
 // Game: //
 Init();
 //
@@ -167,11 +169,11 @@ document.addEventListener("keypress",
 			if (selectedCard !== null)
 			{
 				db.collection('cards').add({
-					id: 1;
-					value: 3;					// 0-13 numerical value of card.
-					suit: 'spades';					// String with the suit of the card
-					isFaceUp: false;
-					playLocation: 'field';
+					id: 1,
+					value: 3,					// 0-13 numerical value of card.
+					suit: 'spades',					// String with the suit of the card
+					isFaceUp: false,
+					playLocation: 'field'
 					
 				})
 				.then(function(docRef) {
