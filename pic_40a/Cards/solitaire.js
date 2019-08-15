@@ -121,8 +121,23 @@ function Init()
 			// Default card image.
 			appendString = "<img src=\"https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/poker-playing-card-3-heart-miroslav-nemecek.jpg\"";
 		}
-		let xCoord = Math.random()*1000;
-		let yCoord = Math.random()*1000;
+		let xCoord, yCoord;
+		var docRef = db.collection("cards").doc(playingCards[i]);
+
+		docRef.get().then(function(doc) {
+			if (doc.exists) {
+				xCoord = doc.data().left;
+				yCoord = doc.data().top;
+			} else {
+				// doc.data() will be undefined in this case
+				console.log("No such document!");
+				xCoord = Math.random()*1000;
+				yCoord = Math.random()*1000;
+			}
+		}).catch(function(error) {
+			console.log("Error getting document:", error);
+		});
+		
 		appendString += "class=\"interactable\" width=\"100px\" id=\"card" + i+"\" style=\"left:" + xCoord + "px; top:" + yCoord + "px; position: fixed;\">";
 		playingCards[i].left = xCoord;
 		playingCards[i].top = yCoord;
