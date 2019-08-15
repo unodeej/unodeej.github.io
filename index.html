@@ -71,7 +71,7 @@
 			function saveToFirebase() {
 				let inputString = document.getElementById('user-email');
 				var emailObject = {
-					email: inputString;
+					email: inputString
 				};
 				db.collection('subscription-entries').add({
 					first: emailObject,
