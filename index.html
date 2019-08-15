@@ -64,9 +64,7 @@
 		  firebase.initializeApp(firebaseConfig);
 
 		  let db = firebase.firestore();
-		</script>
-		
-		<script>
+
 			function saveToFirebase() {
 				firebase.database().ref('subscription-entries').push({
 					first: "Alyssa",
