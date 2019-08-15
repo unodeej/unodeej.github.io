@@ -65,17 +65,18 @@
 		
 		<script>
 			function saveToFirebase() {
-				var emailObject = {
-					email: 'testtest'
-				};
-
-				firebase.database().ref('subscription-entries').push().set(emailObject)
-					.then(function(snapshot) {
-						success(); // some success method
-					}, function(error) {
-						console.log('error' + error);
-						error(); // some error method
-					});
+				// Add a new document in collection "cities"
+				db.collection("cities").doc("LA").set({
+					name: "Los Angeles",
+					state: "CA",
+					country: "USA"
+				})
+				.then(function() {
+					console.log("Document successfully written!");
+				})
+				.catch(function(error) {
+					console.error("Error writing document: ", error);
+				});
 			}
 		</script>
 
