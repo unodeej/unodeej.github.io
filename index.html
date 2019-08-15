@@ -33,7 +33,7 @@
 			</p>
 			<p>
 				<form onsubmit="saveToFirebase('test@gmail')">
-					YO<br>
+					YOBRO<br>
 					<input type="submit">
 				</form>
 			</p>
@@ -41,13 +41,25 @@
 		
 		
 		<!-- The core Firebase JS SDK is always required and must be listed first -->
-		<script src="/__/firebase/6.3.5/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
 
 		<!-- TODO: Add SDKs for Firebase products that you want to use
-			 https://firebase.google.com/docs/web/setup#reserved-urls -->
+			 https://firebase.google.com/docs/web/setup#config-web-app -->
 
-		<!-- Initialize Firebase -->
-		<script src="/__/firebase/init.js"></script>
+		<script>
+		  // Your web app's Firebase configuration
+		  var firebaseConfig = {
+			apiKey: "AIzaSyDjX9AnxTGh9Zg7jBdAFb1IzqEBU-ov4i8",
+			authDomain: "personal-website-aed52.firebaseapp.com",
+			databaseURL: "https://personal-website-aed52.firebaseio.com",
+			projectId: "personal-website-aed52",
+			storageBucket: "personal-website-aed52.appspot.com",
+			messagingSenderId: "977631651115",
+			appId: "1:977631651115:web:3209afb3d6e91f06"
+		  };
+		  // Initialize Firebase
+		  firebase.initializeApp(firebaseConfig);
+		</script>
 		
 		<script>
 			function saveToFirebase(email) {
