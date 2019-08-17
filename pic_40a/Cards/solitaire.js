@@ -24,8 +24,9 @@ Init();
 	suit {String}
 	playLocation {String}
 */
-function Card(id, value, suit, playLocation) {
+function Card(id, index, value, suit, playLocation) {
 	this.id = id;						// "#card__" , where the ID number of the card is in the blank.
+	this.index = index;
 	this.value = value;					// 0-13 numerical value of card.
 	this.suit = suit;					// String with the suit of the card
 	this.isFaceUp = true;				// Whether this card is facing with number side visible.
@@ -93,7 +94,7 @@ function Init()
 			suit="club";
 		}
 		//Card(id, value, suit, playLocation);
-		playingCards.push(new Card("card" + String(i), (i % 13) + 1, suit, "field"));
+		playingCards.push(new Card("card" + String(i), i, (i % 13) + 1, suit, "field"));
 	}
 
 		db.collection("cards").get().then(function(querySnapshot) {
@@ -101,19 +102,7 @@ function Init()
 				console.log(doc.id, " ", doc.data());
 			});
 		});
-		// docRef.get().then(function(doc) {
-			// if (doc.exists) {
-				// playingCards[i].left = doc.data().left;
-				// playingCards[i].top = doc.data().top;
-			// } else {
-				// // doc.data() will be undefined in this case
-				// console.log("No such document!");
-				// playingCards[i].left = Math.random()*1000;
-				// playingCards[i].top = Math.random()*1000;
-			// }
-		// }).catch(function(error) {
-			// console.log("Error getting document:", error);
-		// });
+		
 	
 	// Create the html elements for each card, and assign the image src, as well as the other html attributes.
 	for (let i = 0; i <52; i++)
@@ -143,6 +132,18 @@ function Init()
 
 		appendString += "class=\"interactable\" width=\"100px\" id=\"card" + i+"\" style=\"left:" + playingCards[i].left + "px; top:" + playingCards[i].top + "px; position: fixed;\">";
 		$("#playingCards").append(appendString);
+
+		var docRef = db.collection("cards").doc(playingCards[i].id);
+		docRef.get().then(function(doc) {
+			if (doc.exists) {
+				console.log("HIII");
+			} else {
+				// doc.data() will be undefined in this case
+				console.log("No such document!");
+			}
+		}).catch(function(error) {
+			console.log("Error getting document:", error);
+		});
 	}
 
 	
@@ -245,6 +246,7 @@ $(this).mousemove(function (event) {
 function PushToDatabase(card) {
 	db.collection('cards').doc(card.id).set({
 		id: card.id,
+		index: card.index,
 		value: card.value,					// 0-13 numerical value of card.
 		suit: card.suit,					// String with the suit of the card
 		isFaceUp: card.isFaceUp,
