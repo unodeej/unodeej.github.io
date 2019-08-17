@@ -139,11 +139,11 @@ function Init()
 		});
 
 		appendString += "class=\"interactable\" width=\"100px\" id=\"card" + i+"\" style=\"left:" + xCoord + "px; top:" + yCoord + "px; position: fixed;\">";
-		playingCards[i].left = xCoord;
-		playingCards[i].top = yCoord;
 		$("#playingCards").append(appendString);
 		
-		PushToDatabase(playingCards[i])
+		//playingCards[i].left = xCoord;
+		//playingCards[i].top = yCoord;
+		//PushToDatabase(playingCards[i]);
 	}
 }
 
