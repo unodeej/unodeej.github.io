@@ -295,10 +295,12 @@ function FlipCard(card) {
 	{
 		$("#" + card.id).attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Card_back_06.svg/2000px-Card_back_06.svg.png");
 		card.isFaceUp = false;
+		playingCards[card.index].isFaceUp = false;
 	}
 	else {
 		$("#" + card.id).attr("src", card.suit + "s_" + card.code + ".png");
 		card.isFaceUp = true;
+		playingCards[card.index].isFaceUp = true;
 	}
 	PushToDatabase(card);
 }
