@@ -95,6 +95,26 @@ function Init()
 		//Card(id, value, suit, playLocation);
 		playingCards.push(new Card("card" + String(i), (i % 13) + 1, suit, "field"));
 	}
+
+		var docRef = db.collection("cards").doc(playingCards[i].id);
+		db.collection("cards").get().then(function(querySnapshot) {
+			querySnapshot.forEach(function(doc) {
+				consoloe.log(doc.id, " ", doc.data());
+			});
+		});
+		// docRef.get().then(function(doc) {
+			// if (doc.exists) {
+				// playingCards[i].left = doc.data().left;
+				// playingCards[i].top = doc.data().top;
+			// } else {
+				// // doc.data() will be undefined in this case
+				// console.log("No such document!");
+				// playingCards[i].left = Math.random()*1000;
+				// playingCards[i].top = Math.random()*1000;
+			// }
+		// }).catch(function(error) {
+			// console.log("Error getting document:", error);
+		// });
 	
 	// Create the html elements for each card, and assign the image src, as well as the other html attributes.
 	for (let i = 0; i <52; i++)
@@ -121,30 +141,12 @@ function Init()
 			// Default card image.
 			appendString = "<img src=\"https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/poker-playing-card-3-heart-miroslav-nemecek.jpg\"";
 		}
-		let xCoord, yCoord;
-		var docRef = db.collection("cards").doc(playingCards[i].id);
 
-		docRef.get().then(function(doc) {
-			if (doc.exists) {
-				xCoord = doc.data().left;
-				yCoord = doc.data().top;
-			} else {
-				// doc.data() will be undefined in this case
-				console.log("No such document!");
-				xCoord = Math.random()*1000;
-				yCoord = Math.random()*1000;
-			}
-		}).catch(function(error) {
-			console.log("Error getting document:", error);
-		});
-
-		appendString += "class=\"interactable\" width=\"100px\" id=\"card" + i+"\" style=\"left:" + xCoord + "px; top:" + yCoord + "px; position: fixed;\">";
+		appendString += "class=\"interactable\" width=\"100px\" id=\"card" + i+"\" style=\"left:" + playingCards[i].left + "px; top:" + playingCards[i].top + "px; position: fixed;\">";
 		$("#playingCards").append(appendString);
-		
-		//playingCards[i].left = xCoord;
-		//playingCards[i].top = yCoord;
-		//PushToDatabase(playingCards[i]);
 	}
+
+	
 }
 
 $(".interactable").click(function() {
