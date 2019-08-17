@@ -138,7 +138,7 @@ function Init()
 			console.log("Error getting document:", error);
 		});
 		
-		pushToDatabase(playingCards[i])
+		PushToDatabase(playingCards[i])
 		
 		appendString += "class=\"interactable\" width=\"100px\" id=\"card" + i+"\" style=\"left:" + xCoord + "px; top:" + yCoord + "px; position: fixed;\">";
 		playingCards[i].left = xCoord;
