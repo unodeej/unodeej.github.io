@@ -96,7 +96,6 @@ function Init()
 		playingCards.push(new Card("card" + String(i), (i % 13) + 1, suit, "field"));
 	}
 
-		var docRef = db.collection("cards").doc(playingCards[i].id);
 		db.collection("cards").get().then(function(querySnapshot) {
 			querySnapshot.forEach(function(doc) {
 				consoloe.log(doc.id, " ", doc.data());
