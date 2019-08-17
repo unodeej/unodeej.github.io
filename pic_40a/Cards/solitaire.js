@@ -277,6 +277,8 @@ function ShuffleCards() {
 		// Move cards to deck location.
 		$("#" + playingCards[i].id).css("left", 10);
 		$("#" + playingCards[i].id).css("top", 50);
+		playingCards[i].left = 10;
+		playingCards[i].top = 50;
 		// Shuffle them in a random order.
 		topZIndex = 100;
 		$("#" + playingCards[i].id).css("zIndex", Math.floor(Math.random()*topZIndex));
