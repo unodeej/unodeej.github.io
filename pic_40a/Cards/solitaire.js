@@ -100,6 +100,14 @@ function Init()
 		db.collection("cards").get().then(function(querySnapshot) {
 			querySnapshot.forEach(function(doc) {
 				console.log(doc.id, " ", doc.data());
+				playingCards[doc.data().index].left = doc.data().left;
+				playingCards[doc.data().index].top = doc.data().top;
+				$("#" + playingCards[doc.data().index].id).css("left", playingCards[doc.data().index].left + "px");
+				$("#" + playingCards[doc.data().index].id).css("top", playingCards[doc.data().index].top + "px");
+				if (doc.data().isFaceUp === false)
+				{
+					playingCards[doc.data().index].isFaceUp = false;
+				}
 			});
 		});
 		
@@ -132,26 +140,31 @@ function Init()
 
 		appendString += "class=\"interactable\" width=\"100px\" id=\"card" + i+"\" style=\"left:" + playingCards[i].left + "px; top:" + playingCards[i].top + "px; position: fixed;\">";
 		$("#playingCards").append(appendString);
+		
+		if (playingCards[i].isFaceUp === false)
+		{
+			$("#" + playingCards[i].id).attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Card_back_06.svg/2000px-Card_back_06.svg.png");
+		}
 
-		var docRef = db.collection("cards").doc(playingCards[i].id);
-		docRef.get().then(function(doc) {
-			if (doc.exists) {
-				playingCards[i].left = doc.data().left;
-				playingCards[i].top = doc.data().top;
-				$("#" + playingCards[i].id).css("left", playingCards[i].left + "px");
-				$("#" + playingCards[i].id).css("top", playingCards[i].top + "px");
-				if (doc.data().isFaceUp === false)
-				{
-					playingCards[i].isFaceUp = false;
-					$("#" + playingCards[i].id).attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Card_back_06.svg/2000px-Card_back_06.svg.png");
-				}
-			} else {
-				// doc.data() will be undefined in this case
-				console.log("No such document!");
-			}
-		}).catch(function(error) {
-			console.log("Error getting document:", error);
-		});
+		// var docRef = db.collection("cards").doc(playingCards[i].id);
+		// docRef.get().then(function(doc) {
+			// if (doc.exists) {
+				// playingCards[i].left = doc.data().left;
+				// playingCards[i].top = doc.data().top;
+				// $("#" + playingCards[i].id).css("left", playingCards[i].left + "px");
+				// $("#" + playingCards[i].id).css("top", playingCards[i].top + "px");
+				// if (doc.data().isFaceUp === false)
+				// {
+					// playingCards[i].isFaceUp = false;
+					// $("#" + playingCards[i].id).attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Card_back_06.svg/2000px-Card_back_06.svg.png");
+				// }
+			// } else {
+				// // doc.data() will be undefined in this case
+				// console.log("No such document!");
+			// }
+		// }).catch(function(error) {
+			// console.log("Error getting document:", error);
+		// });
 	}
 
 	
