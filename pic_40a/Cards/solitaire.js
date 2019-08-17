@@ -140,8 +140,9 @@ function Init()
 				playingCards[i].top = doc.data().top;
 				$("#" + playingCards[i].id).css("left", playingCards[i].left + "px");
 				$("#" + playingCards[i].id).css("top", playingCards[i].top + "px");
-				if (playingCards[i].isFaceUp === false)
+				if (doc.data().isFaceUp === false)
 				{
+					playingCards[i].isFaceUp = false;
 					$("#" + playingCards[i].id).attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Card_back_06.svg/2000px-Card_back_06.svg.png");
 				}
 			} else {
