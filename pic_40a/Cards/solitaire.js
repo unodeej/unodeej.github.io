@@ -136,7 +136,8 @@ function Init()
 		var docRef = db.collection("cards").doc(playingCards[i].id);
 		docRef.get().then(function(doc) {
 			if (doc.exists) {
-				console.log("HIII");
+				playingCards[i].left = doc.data().left;
+				playingCards[i].top = doc.data().top;
 			} else {
 				// doc.data() will be undefined in this case
 				console.log("No such document!");
