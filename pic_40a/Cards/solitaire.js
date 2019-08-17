@@ -98,7 +98,7 @@ function Init()
 
 		db.collection("cards").get().then(function(querySnapshot) {
 			querySnapshot.forEach(function(doc) {
-				consoloe.log(doc.id, " ", doc.data());
+				console.log(doc.id, " ", doc.data());
 			});
 		});
 		// docRef.get().then(function(doc) {
