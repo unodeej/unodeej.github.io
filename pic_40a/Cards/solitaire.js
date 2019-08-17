@@ -130,11 +130,16 @@ function Init()
 			appendString = "<img src=\"https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/poker-playing-card-3-heart-miroslav-nemecek.jpg\"";
 		}
 
+		appendString += "class=\"interactable\" width=\"100px\" id=\"card" + i+"\" style=\"left:" + playingCards[i].left + "px; top:" + playingCards[i].top + "px; position: fixed;\">";
+		$("#playingCards").append(appendString);
+
 		var docRef = db.collection("cards").doc(playingCards[i].id);
 		docRef.get().then(function(doc) {
 			if (doc.exists) {
 				playingCards[i].left = doc.data().left;
 				playingCards[i].top = doc.data().top;
+				$("#" + playingCards[i].id).css("left", playingCards[i].left + "px");
+				$("#" + playingCards[i].id).css("top", playingCards[i].top + "px");
 			} else {
 				// doc.data() will be undefined in this case
 				console.log("No such document!");
@@ -142,11 +147,6 @@ function Init()
 		}).catch(function(error) {
 			console.log("Error getting document:", error);
 		});
-
-		appendString += "class=\"interactable\" width=\"100px\" id=\"card" + i+"\" style=\"left:" + playingCards[i].left + "px; top:" + playingCards[i].top + "px; position: fixed;\">";
-		$("#playingCards").append(appendString);
-
-		
 	}
 
 	
