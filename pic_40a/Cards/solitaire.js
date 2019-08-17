@@ -140,6 +140,10 @@ function Init()
 				playingCards[i].top = doc.data().top;
 				$("#" + playingCards[i].id).css("left", playingCards[i].left + "px");
 				$("#" + playingCards[i].id).css("top", playingCards[i].top + "px");
+				if (card.isFaceUp === true)
+				{
+					$("#" + card.id).attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Card_back_06.svg/2000px-Card_back_06.svg.png");
+				}
 			} else {
 				// doc.data() will be undefined in this case
 				console.log("No such document!");
