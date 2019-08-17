@@ -122,7 +122,7 @@ function Init()
 			appendString = "<img src=\"https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/poker-playing-card-3-heart-miroslav-nemecek.jpg\"";
 		}
 		let xCoord, yCoord;
-		var docRef = db.collection("cards").doc(playingCards[i]);
+		var docRef = db.collection("cards").doc(playingCards[i].id);
 
 		docRef.get().then(function(doc) {
 			if (doc.exists) {
