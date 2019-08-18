@@ -164,7 +164,7 @@ function Init()
 	
 	db.collection("cards").onSnapshot(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-            console.log("YO" + doc.data());
+            console.log("YO" + doc.data().id);
         });
     });
 }
