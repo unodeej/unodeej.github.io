@@ -162,9 +162,17 @@ function Init()
 		});
 	});
 	
-	db.collection("cards").onSnapshot(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
-            console.log("YO" + doc.data().id);
+	db.collection("cards").onSnapshot(function(snapshot) {
+        snapshot.docChanges().forEach(function(change) {
+            // if (change.type === "added") {
+                // console.log("New city: ", change.doc.data());
+            // }
+            if (change.type === "modified") {
+                console.log("Modified card: ", change.doc.data());
+            }
+            // if (change.type === "removed") {
+                // console.log("Removed city: ", change.doc.data());
+            // }
         });
     });
 }
