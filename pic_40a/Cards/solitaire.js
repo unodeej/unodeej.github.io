@@ -276,6 +276,8 @@ $(this).mousemove(function (event) {
 		$("#" + selectedCard.id).css("top", event.clientY - OffsetY + "px");
 		selectedCard.left = event.clientX - OffsetX;
 		selectedCard.top = event.clientY - OffsetY;
+
+		UpdateCard(selectedCard);
 	}
 });
 
