@@ -150,15 +150,7 @@ function Init()
 	db.collection("cards").get().then(function(querySnapshot) {
 		querySnapshot.forEach(function(doc) {
 			// console.log(doc.id, " ", doc.data());
-			playingCards[doc.data().index].left = doc.data().left;
-			playingCards[doc.data().index].top = doc.data().top;
-			$("#" + playingCards[doc.data().index].id).css("left", playingCards[doc.data().index].left + "px");
-			$("#" + playingCards[doc.data().index].id).css("top", playingCards[doc.data().index].top + "px");
-			if (doc.data().isFaceUp === false)
-			{
-				playingCards[doc.data().index].isFaceUp = false;
-				$("#" + playingCards[doc.data().index].id).attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Card_back_06.svg/2000px-Card_back_06.svg.png");
-			}
+			UpdateCard(doc.data());
 		});
 	});
 	
@@ -169,12 +161,28 @@ function Init()
             // }
             if (change.type === "modified") {
                 console.log("Modified card: ", change.doc.data());
+				UpdateCard(change.doc.data());
             }
             // if (change.type === "removed") {
                 // console.log("Removed city: ", change.doc.data());
             // }
         });
     });
+}
+
+function UpdateCard(changeData) {
+	playingCards[changeData.index].left = changeData.left;
+	playingCards[changeData.index].top = changeData.top;
+	
+	$("#" + playingCards[changeData.index].id).css("left", playingCards[changeData.index].left + "px");
+	$("#" + playingCards[changeData.index].id).css("top", playingCards[changeData.index].top + "px");
+	if (changeData.isFaceUp !== playingCards[changeData.index].isFaceUp)
+	{
+		FlipCard(playingCards[changeData.index]);
+		playingCards[changeData.index].isFaceUp = changeData.isFaceUp;
+
+	}
+	
 }
 
 $(".interactable").click(function() {
