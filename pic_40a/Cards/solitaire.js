@@ -277,7 +277,7 @@ $(this).mousemove(function (event) {
 		selectedCard.left = event.clientX - OffsetX;
 		selectedCard.top = event.clientY - OffsetY;
 
-		UpdateCard(selectedCard);
+		PushToDatabase(selectedCard);
 	}
 });
 
