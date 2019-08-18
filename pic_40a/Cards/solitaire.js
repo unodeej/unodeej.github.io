@@ -149,7 +149,7 @@ function Init()
 
 	db.collection("cards").get().then(function(querySnapshot) {
 		querySnapshot.forEach(function(doc) {
-			console.log(doc.id, " ", doc.data());
+			// console.log(doc.id, " ", doc.data());
 			playingCards[doc.data().index].left = doc.data().left;
 			playingCards[doc.data().index].top = doc.data().top;
 			$("#" + playingCards[doc.data().index].id).css("left", playingCards[doc.data().index].left + "px");
@@ -161,6 +161,12 @@ function Init()
 			}
 		});
 	});
+	
+	db.collection("cards").onSnapshot(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            console.log("YO" + doc.data());
+        });
+    });
 }
 
 $(".interactable").click(function() {
@@ -231,7 +237,7 @@ document.addEventListener("mouseover",
 		if (event.target.id !=="")
 		{
 			let idNum = Number(event.target.id.substr(4));
-			console.log(playingCards[idNum]);
+			// console.log(playingCards[idNum]);
 			mouseOverCard = playingCards[idNum];
 		}
 	}
