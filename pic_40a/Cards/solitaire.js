@@ -9,6 +9,10 @@ let OffsetX;				// X mouse pos offset when selecting a card.
 let OffsetY;				// Y mouse pos offset when selecting a card.
 
 
+let updateLatency = 50;		// Number of checks to skip between card move updates
+let latencyTimer = 0;
+
+
 
 
 
@@ -276,8 +280,14 @@ $(this).mousemove(function (event) {
 		$("#" + selectedCard.id).css("top", event.clientY - OffsetY + "px");
 		selectedCard.left = event.clientX - OffsetX;
 		selectedCard.top = event.clientY - OffsetY;
-
-		PushToDatabase(selectedCard);
+		
+		if (latencyTimer === 0)
+		{
+			PushToDatabase(selectedCard);
+			latencyTimer = updateLatency;
+		}
+		else
+			latencyTimer--;
 	}
 });
 
