@@ -157,7 +157,7 @@ function Init()
 			if (doc.data().isFaceUp === false)
 			{
 				playingCards[doc.data().index].isFaceUp = false;
-				$("#" + playingCards[i].id).attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Card_back_06.svg/2000px-Card_back_06.svg.png");
+				$("#" + playingCards[doc.data().index].id).attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Card_back_06.svg/2000px-Card_back_06.svg.png");
 			}
 		});
 	});
