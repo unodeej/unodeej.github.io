@@ -1,4 +1,4 @@
-let folder = "http://github.com/unodeej/unodeej.github.io/tree/master/graphic_design/img/comics"; //TODO: change this to the path to your folder with the images.
+let folder = "https://unodeej.github.io/graphic_design/img/comics"; //TODO: change this to the path to your folder with the images.
     $.ajax({
         url: folder,
         success: function(data) {
