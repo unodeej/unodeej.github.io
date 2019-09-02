@@ -43,11 +43,11 @@ function bulletStartMove(idNum, xPos, yPos) {
 		for (let a of alienArray) {
 			let alienX = Number(document.getElementById(a).style.left.slice(0, -2));
 			let alienY = Number(document.getElementById(a).style.top.slice (0, -2));
-			let lowerXBound = alienX - 10;
-			let upperXBound = alienX + 10;
-			let lowerYBound = alienY - 10;
-			let upperYBound = alienY + 10;
-			if ( ((xPos > lowerXBound) && (xPos < upperXBound)) && ((yPos > lowerYBound) && (yPos < upperYBound)) 
+			let lowerXBound = alienX;
+			let upperXBound = alienX+100;
+			let lowerYBound = alienY;
+			let upperYBound = alienY + 75;
+			if ( ((xPos+25 > lowerXBound) && (xPos+25 < upperXBound)) && ((yPos+25 > lowerYBound) && (yPos+25 < upperYBound)) 
 				&& (document.getElementById(a).style.visibility !== "hidden") ) {
 				document.getElementById(a).style.visibility = "hidden";
 				clearInterval(bullet_event_id);			// Clear the update for this bullet
