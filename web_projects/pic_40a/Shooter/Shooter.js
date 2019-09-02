@@ -54,7 +54,7 @@ function alienStartMove(idNum, yPos) {
 		document.getElementById("alien" + idNum).style.top = yPos + "px";
 		yPos += alienSpeed;
 		alien_event_id = setTimeout(alienMove_function, alienUpdateRate, idNum, yPos);
-		if (yPos > 200)
+		if (yPos > 615)
 		{
 			clearInterval(alien_event_id);			// Clear the update for this alien
 			destroyAlien(idNum);
