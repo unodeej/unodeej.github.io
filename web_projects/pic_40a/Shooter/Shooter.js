@@ -63,6 +63,17 @@ function alienStartMove(idNum, yPos) {
 	alien_event_id = setTimeout(alienMove_function, alienUpdateRate, idNum, yPos);
 }
 
+function destroyAlien(idNum) {
+	let parent = document.getElementById("alienList");
+	let child = document.getElementById("alien" + idNum);
+	parent.removeChild(child);
+	for (let i = 0; i < alienArray.length; i++) {	//Update the array.
+		if (alienArray[i] === "bullet" + idNum) {
+			alienArray.splice(i, 1);	
+		}
+	}
+}
+
 function destroyBullet(idNum) {
 	let parent = document.getElementById("bulletList");
 	let child = document.getElementById("bullet" + idNum);
