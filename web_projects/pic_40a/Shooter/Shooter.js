@@ -37,6 +37,8 @@ function bulletStartMove(idNum, xPos, yPos) {
 	{
 		document.getElementById("bullet" + idNum).style.top = yPos + "px";
 		yPos -= bulletSpeed;
+		bullet_event_id = setTimeout(bulletMove_function, bulletUpdateRate, idNum, yPos);
+		
 		// Check collisions
 		for (let a of alienArray) {
 			let alienX = Number(document.getElementById(a).style.left.slice(0, -2));
@@ -47,11 +49,12 @@ function bulletStartMove(idNum, xPos, yPos) {
 			let upperYBound = alienY + 10;
 			if ( ((xPos > lowerXBound) && (xPos < upperXBound)) && ((yPos > lowerYBound) && (yPos < upperYBound)) ) {
 				destroyAlien(a.slice(5));
+				clearInterval(bullet_event_id);			// Clear the update for this bullet
 				destroyBullet(idNum);
 				break;
 			}
 		}
-		bullet_event_id = setTimeout(bulletMove_function, bulletUpdateRate, idNum, yPos);
+		
 		if (yPos < 50)
 		{
 			clearInterval(bullet_event_id);			// Clear the update for this bullet
