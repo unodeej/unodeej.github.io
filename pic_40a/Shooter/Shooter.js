@@ -56,8 +56,8 @@ function alienStartMove(idNum, yPos) {
 		alien_event_id = setTimeout(alienMove_function, alienUpdateRate, idNum, yPos);
 		if (yPos < 50)
 		{
-			clearInterval(alien_event_id);			// Clear the update for this alien
-			destroyAlien(idNum);
+			//clearInterval(alien_event_id);			// Clear the update for this alien
+			//destroyAlien(idNum);
 		}
 	}
 	alien_event_id = setTimeout(alienMove_function, alienUpdateRate, idNum, yPos);
