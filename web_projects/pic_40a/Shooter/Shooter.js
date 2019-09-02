@@ -68,7 +68,7 @@ function destroyAlien(idNum) {
 	let child = document.getElementById("alien" + idNum);
 	parent.removeChild(child);
 	for (let i = 0; i < alienArray.length; i++) {	//Update the array.
-		if (alienArray[i] === "bullet" + idNum) {
+		if (alienArray[i] === "alien" + idNum) {
 			alienArray.splice(i, 1);	
 		}
 	}
