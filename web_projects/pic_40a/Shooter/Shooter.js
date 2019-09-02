@@ -48,8 +48,8 @@ function bulletStartMove(idNum, xPos, yPos) {
 			let lowerYBound = alienY - 10;
 			let upperYBound = alienY + 10;
 			if ( ((xPos > lowerXBound) && (xPos < upperXBound)) && ((yPos > lowerYBound) && (yPos < upperYBound)) 
-				&& (document.getElementById(a).style.visibility !== hidden) ) {
-				document.getElementById(a).style.visibility = hidden;
+				&& (document.getElementById(a).style.visibility !== "hidden") ) {
+				document.getElementById(a).style.visibility = "hidden";
 				clearInterval(bullet_event_id);			// Clear the update for this bullet
 				destroyBullet(idNum);
 				break;
