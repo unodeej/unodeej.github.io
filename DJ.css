@@ -15,6 +15,7 @@ html {
 }
 
 #links {
+	position: absolute;
 	float: left;
 	left: 20%;
 }
