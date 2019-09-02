@@ -32,11 +32,25 @@ setInterval(InstantiateAlien, 2000, 20)
 // };
 
 
-function bulletStartMove(idNum, yPos) {
+function bulletStartMove(idNum, xPos, yPos) {
 	let bulletMove_function = function()
 	{
 		document.getElementById("bullet" + idNum).style.top = yPos + "px";
 		yPos -= bulletSpeed;
+		// Check collisions
+		for (let a of alienArray) {
+			let alienX = document.getElementById(a).style.left;
+			let alienY = document.getElementById(a).style.top;
+			let lowerXBound = alienX - 10;
+			let upperXBound = alienX + 10;
+			let lowerYBound = alienY - 10;
+			let upperYBound = alienY + 10;
+			if ( ((xPos > lowerXBound) && (xPos < upperXBound)) && ((yPos > lowerYBound) && (yPos < upperYBound)) ) {
+				destroyAlien(a);
+				destroyBullet(idNum);
+				break;
+			}
+		}
 		bullet_event_id = setTimeout(bulletMove_function, bulletUpdateRate, idNum, yPos);
 		if (yPos < 50)
 		{
@@ -108,7 +122,7 @@ function InstantiateBullet(x,y) {
 	document.getElementById("bullet" + bulletID).style.position = "absolute";
 	document.getElementById("bullet" + bulletID).style.top = y + "px";
 	document.getElementById("bullet" + bulletID).style.left = x + "px";
-	bulletStartMove(bulletID, y);
+	bulletStartMove(bulletID, x, y);
 	bulletArray.push("bullet" + bulletID);
 	bulletID++;
 }
