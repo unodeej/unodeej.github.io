@@ -1,4 +1,4 @@
-let folder = "img/comics"; //TODO: change this to the path to your folder with the images.
+let folder = "test_images"; //TODO: change this to the path to your folder with the images.
     $.ajax({
         url: folder,
         success: function(data) {

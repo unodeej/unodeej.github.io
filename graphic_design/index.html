@@ -7,10 +7,27 @@
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
+	  <!-- nanogallery2 -->
+		<link  href="https://unpkg.com/nanogallery2@2.4.2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+		<script  type="text/javascript" src="https://unpkg.com/nanogallery2@2.4.2/dist/jquery.nanogallery2.min.js"></script>
 	<script src="gallery.js" defer ></script>
 </head>
 <body>
-	<div id = "gallery">
-	</div>
+	   <!-- ### start of the gallery definition ### -->
+	  <div id="nanogallery2"
+	  
+		  <!-- gallery settings -->
+		  data-nanogallery2 = '{
+				"thumbnailHeight":  150,
+				"thumbnailWidth":   150,
+				"itemsBaseURL":     "https://nanogallery2.nanostudio.org/samples/"
+			  }' >
+			  
+		  <!-- gallery content -->
+		  <a href = "berlin1.jpg"   data-ngThumb = "berlin1_t.jpg" > Berlin 1 </a>
+		  <a href = "berlin2.jpg"   data-ngThumb = "berlin2_t.jpg" > Berlin 2 </a>
+		  <a href = "berlin3.jpg"   data-ngThumb = "berlin2_t.jpg" > Berlin 3 </a>
+	  </div>
+	  <!-- ### end of the gallery definition ### -->
 </body>
 </html>
