@@ -46,7 +46,7 @@ function bulletStartMove(idNum, xPos, yPos) {
 			let lowerYBound = alienY - 10;
 			let upperYBound = alienY + 10;
 			if ( ((xPos > lowerXBound) && (xPos < upperXBound)) && ((yPos > lowerYBound) && (yPos < upperYBound)) ) {
-				destroyAlien(a);
+				destroyAlien(a.slice(5));
 				destroyBullet(idNum);
 				break;
 			}
