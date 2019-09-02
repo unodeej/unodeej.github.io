@@ -47,8 +47,9 @@ function bulletStartMove(idNum, xPos, yPos) {
 			let upperXBound = alienX + 10;
 			let lowerYBound = alienY - 10;
 			let upperYBound = alienY + 10;
-			if ( ((xPos > lowerXBound) && (xPos < upperXBound)) && ((yPos > lowerYBound) && (yPos < upperYBound)) ) {
-				destroyAlien(a.slice(5));
+			if ( ((xPos > lowerXBound) && (xPos < upperXBound)) && ((yPos > lowerYBound) && (yPos < upperYBound)) 
+				&& (document.getElementById(a).style.visibility !== hidden) ) {
+				document.getElementById(a).style.visibility = hidden;
 				clearInterval(bullet_event_id);			// Clear the update for this bullet
 				destroyBullet(idNum);
 				break;
