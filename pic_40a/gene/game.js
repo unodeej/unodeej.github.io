@@ -82,12 +82,12 @@ function GameOver() {
 	
 	// Add the Game Over screen text.
 	let appendStr = "GAME OVER<br>Your school had a prestige score of: " + prestige;
-	appendStr += "<br><form method='post' action='highScores.php'>"
+	appendStr += "<br><form method='post' action='highScores.html'>"
 	appendStr += "<input type='hidden' name='score' id='scoreForm' value='3'>";
 	appendStr += "<label for='playerName'>Enter your name:</label><input type='text' name='playerName' id='playerName'>";
 	appendStr += "</form>";
 	appendStr += "<br><a href='#' onclick='setHighscoreValue();'>View Leaderboard</a>";
-	appendStr += "<br><br><a href='play.php'>Play again!</a><br>";
+	appendStr += "<br><br><a href='play.html'>Play again!</a><br>";
 	$("body").append(appendStr);
 
 }
