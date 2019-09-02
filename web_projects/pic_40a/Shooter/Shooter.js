@@ -39,8 +39,8 @@ function bulletStartMove(idNum, xPos, yPos) {
 		yPos -= bulletSpeed;
 		// Check collisions
 		for (let a of alienArray) {
-			let alienX = document.getElementById(a).style.left;
-			let alienY = document.getElementById(a).style.top;
+			let alienX = Number(document.getElementById(a).style.left.slice(0, -2));
+			let alienY = Number(document.getElementById(a).style.top.slice (0, -2));
 			let lowerXBound = alienX - 10;
 			let upperXBound = alienX + 10;
 			let lowerYBound = alienY - 10;
